@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">CampaignAR</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+
+    <array name="home_screen_list">
+        <item>LIVE DISCUSSIONS IN 360</item>
+        <item>“BE THE CM” VR EXPERIENCE</item>
+        <item>YOUR INTERESTS</item>
+        <item>KNOW YOUR CANDIDATE</item>
+        <item>POLLING BOOTH</item>
+        <item>OUR PARTY</item>
+        <item>VIDEO AND GALLERY</item>
+    </array>
+
+    <array name="badges_names_list">
+        <item>SOCIALLY
+            RESPONSIBLE
+        </item>
+        <item>KNOWLEDGE
+            SEEKING
+        </item>
+        <item>BJP FOLLOWER</item>
+        <item>DEBATOR</item>
+        <item>IDEA CONTRIBUTOR</item>
+    </array>
+
+    <array name="badges_info_list">
+        <item>Complete 5 more AR
+            tasks.
+        </item>
+        <item>Read more articles
+            in the App.
+        </item>
+        <item>Joined BJP</item>
+        <item>Participate in 5
+            more debates.
+        </item>
+        <item>Completed all the
+            “Be The CM” tasks
+        </item>
+    </array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

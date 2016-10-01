@@ -1,0 +1,34 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.campaignar.smis.campaignar.Fragments.FragmentYourInterestsDetail">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="The Bharatiya Janata Party expresses its
+    deep concern over the ongoing agrarian
+    crisis in the country. Agriculture in India is
+    not merely an economic activity but also
+    a source of employment generation for
+    nearly two third of our population." />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="The UPA Government’s inability to respond
+            quickly and adequately against the
+            challenges posed by the ongoing crisis
+             has put livelihoods of our farmers in jeopardy.
+            India needs an economic model
+            based on equitable growth which doesn’t
+             create huge income disparities." />
+
+
+
+</LinearLayout>
