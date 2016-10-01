@@ -35,5 +35,7 @@ dependencies {
     compile 'com.daimajia.androidanimations:library:1.1.2@aar'
     compile 'com.daimajia.androidviewhover:library:1.0.4@aar'
     compile 'com.mikhaellopez:circularimageview:3.0.2'
+    compile 'com.google.android.gms:play-services:9.6.1'
+    compile 'ayar.oktay.library:advancedtextview:0.4.5'
     testCompile 'junit:junit:4.12'
 }
