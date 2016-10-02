@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/black_gradient_new"
+    android:weightSum="6">
+
+
+    <RelativeLayout
+        android:layout_weight="4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_favorite_border_deep_orange_600_36dp" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="@color/White"
+        android:text="DEBATE WITH BJP LEADERS" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:textSize="12sp"
+            android:layout_toLeftOf="@+id/ivDividerLeft"
+            android:textColor="@color/colorAccent"
+            android:text="Live" />
+
+        <ImageView
+            android:id="@+id/ivDividerLeft"
+            android:layout_marginTop="5dp"
+            android:layout_width="1dp"
+            android:layout_height="18dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_toLeftOf="@+id/tvOnlineUser"
+            android:background="@color/White"/>
+
+        <TextView
+            android:id="@+id/tvOnlineUser"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/White"
+            android:textSize="12sp"
+            android:text="10K Online" />
+
+
+        <ImageView
+            android:id="@+id/ivDividerRight"
+            android:layout_marginTop="5dp"
+            android:layout_width="1dp"
+            android:layout_height="18dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/tvOnlineUser"
+            android:background="@color/White"/>
+
+        <TextView
+            android:id="@+id/tvShare"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/White"
+            android:layout_toRightOf="@+id/ivDividerRight"
+            android:layout_weight="1"
+            android:textSize="12sp"
+            android:text="SHARE" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/tvShare"
+            android:src="@drawable/ic_subdirectory_arrow_left_blue_grey_400_24dp"/>
+
+        <ImageView
+            android:id="@+id/ivDividerBottom"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="20dp"
+            android:layout_below="@+id/tvOnlineUser"
+            android:src="@color/grey"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivDividerBottom">
+
+            <TextView
+                android:id="@+id/tvPostQuestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="POST A QUESTION"
+                android:textColor="@color/white"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/tvPostQuestion"
+                android:src="@drawable/ic_keyboard_arrow_right_orange_600_36dp"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.campaignar.smis.campaignar.Activity.KnowYourCandidate;
+import com.campaignar.smis.campaignar.Activity.PollingBoothActivity;
 import com.campaignar.smis.campaignar.Activity.VideoGallery;
 import com.campaignar.smis.campaignar.Activity.YourInterests;
 import com.campaignar.smis.campaignar.R;
@@ -93,6 +94,7 @@ public class HomeScreenRecyclerViewAdapter extends
                     getContext().startActivity(new Intent(getContext(), KnowYourCandidate.class));
                     break;
                 case 4:
+                    getContext().startActivity(new Intent(getContext(), PollingBoothActivity.class));
                     break;
                 case 5:
                     break;

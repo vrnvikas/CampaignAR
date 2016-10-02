@@ -69,18 +69,21 @@ public class FragmentKnowYourCandidate extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_fragment_know_your_candidate, container, false);
+        View view = inflater.inflate(R.layout.fragment_know_your_candidate, container, false);
+        return view;
+    }
+
+
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
         recyclerView  = (RecyclerView) view.findViewById(R.id.know_your_candidate_recycler_view);
         adapter = new KnowYourCandidateRecyclerViewAdapter(getActivity(),mListener);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        return view;
-    }
-
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

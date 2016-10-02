@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_polling_booth"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -75,12 +75,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="380dp" />
 
+            <ImageView
+                android:id="@+id/floating_action_button_offset"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@+id/map" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/info_container"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                app:srcCompat="@android:drawable/ic_dialog_email" />
+
 
             <LinearLayout
+                android:id="@+id/info_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/floating_action_button_offset"
                 android:layout_marginLeft="60dp"
-                android:layout_below="@+id/map"
                 android:orientation="vertical">
 
                 <TextView
@@ -113,6 +129,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight=".5"
+                        android:layout_margin="5dp"
                         android:gravity="center_vertical"
                         android:text="View Other Polling Booths" />
 
@@ -126,16 +143,19 @@
 
             </LinearLayout>
 
-            <android.support.design.widget.FloatingActionButton
-                android:id="@+id/fab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_alignBottom="@+id/map"
-                app:srcCompat="@android:drawable/ic_dialog_email" />
-
         </RelativeLayout>
 
     </LinearLayout>
+
+    <com.arlib.floatingsearchview.FloatingSearchView
+        android:id="@+id/floating_search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:floatingSearch_backgroundColor="@color/white"
+        app:floatingSearch_close_search_on_keyboard_dismiss="true"
+        app:floatingSearch_leftActionMode="showSearch"
+        app:floatingSearch_searchHint="Search..."
+        app:floatingSearch_showSearchKey="false"
+        app:floatingSearch_suggestionsListAnimDuration="250" />
 
 </RelativeLayout>

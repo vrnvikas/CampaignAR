@@ -49,5 +49,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_polling_booth_maps">Map</string>
     <string name="very_long_text">The Bharatiya Janata Party expresses its     deep concern over the ongoing agrarian     crisis in the country. Agriculture in India is     not merely an economic activity but also     a source of employment generation for     nearly two third of our population.</string>
+    <string name="very_long_text2">What development have you done since the last 2 years in our panchayat? Please mension the promisses you have achieved?</string>
 
 </resources>

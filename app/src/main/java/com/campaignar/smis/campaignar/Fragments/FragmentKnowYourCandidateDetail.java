@@ -71,13 +71,8 @@ public class FragmentKnowYourCandidateDetail extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fragment_know_your_candidate_detail, container, false);
-    }
+        View view = inflater.inflate(R.layout.fragment_fragment_know_your_candidate_detail, container, false);
 
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
         adapter = new FragmentPagerItemAdapter(getActivity().getSupportFragmentManager());
 
         viewPager = (ViewPager) view.findViewById(R.id.viewpager);
@@ -86,6 +81,14 @@ public class FragmentKnowYourCandidateDetail extends Fragment {
         viewPagerTab = (SmartTabLayout) view.findViewById(R.id.viewpagertab);
         viewPagerTab.setDistributeEvenly(true);
         viewPagerTab.setViewPager(viewPager);
+
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event

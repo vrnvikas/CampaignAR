@@ -52,7 +52,9 @@
 
         <activity
             android:name=".Activity.PollingBoothMapsActivity"
-            android:label="@string/title_activity_polling_booth_maps"></activity>
+            android:label="@string/title_activity_polling_booth_maps" />
+        <activity android:name=".Activity.KnowYourCandidateDetail" />
+        <activity android:name=".Activity.LiveDiscussions"></activity>
     </application>
 
 </manifest>

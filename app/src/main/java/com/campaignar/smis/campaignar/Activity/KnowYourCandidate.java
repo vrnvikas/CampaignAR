@@ -36,7 +36,6 @@ public class KnowYourCandidate extends AppCompatActivity
 
     @Override
     public void onLoadFragmentKonwYourCandidateDetail() {
-
         Fragment newFragment = FragmentKnowYourCandidateDetail.newInstance("","");
         getSupportFragmentManager().beginTransaction()
                 .add(newFragment, "RING_SPECS")
