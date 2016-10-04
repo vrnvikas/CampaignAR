@@ -1,6 +1,7 @@
 package com.campaignar.smis.campaignar.Fragments;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -34,6 +35,7 @@ public class FragmentKnowYourCandidate extends Fragment {
     private KnowYourCandidateRecyclerViewAdapter adapter;
 
     private OnFragmentInteractionListener mListener;
+    private TypedArray imagesList;
 
     public FragmentKnowYourCandidate() {
         // Required empty public constructor
@@ -80,7 +82,10 @@ public class FragmentKnowYourCandidate extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         recyclerView  = (RecyclerView) view.findViewById(R.id.know_your_candidate_recycler_view);
-        adapter = new KnowYourCandidateRecyclerViewAdapter(getActivity(),mListener);
+
+        imagesList = getActivity().getResources().obtainTypedArray(R.array.images_candidate);
+
+        adapter = new KnowYourCandidateRecyclerViewAdapter(getActivity(),mListener,imagesList);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));

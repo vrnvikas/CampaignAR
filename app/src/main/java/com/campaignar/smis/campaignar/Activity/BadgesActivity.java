@@ -8,7 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import com.campaignar.smis.campaignar.Adapter.BadgesGridViewRecyclerViewAdapter;
 import com.campaignar.smis.campaignar.R;
 
-public class BadgesActivity extends AppCompatActivity {
+public class BadgesActivity extends BaseActivity {
 
     RecyclerView badgesRecyclerView;
     BadgesGridViewRecyclerViewAdapter adapter;
@@ -17,9 +17,8 @@ public class BadgesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_badges);
-
+        getSupportActionBar().setTitle("BADGES");
         badgesRecyclerView = (RecyclerView) findViewById(R.id.badges_recycler_view);
-
         String[] badgesNames = this.getResources().getStringArray(R.array.badges_names_list);
         String[] badgesInfo = this.getResources().getStringArray(R.array.badges_info_list);
         adapter = new BadgesGridViewRecyclerViewAdapter(this,badgesNames,badgesInfo);

@@ -8,7 +8,7 @@ import android.os.Bundle;
 import com.campaignar.smis.campaignar.Fragments.FragmentYourInterests;
 import com.campaignar.smis.campaignar.R;
 
-public class YourInterests extends AppCompatActivity implements FragmentYourInterests.OnFragmentInteractionListener{
+public class YourInterests extends BaseActivity implements FragmentYourInterests.OnFragmentInteractionListener{
 
 
     private Fragment currentFragment;
@@ -17,6 +17,8 @@ public class YourInterests extends AppCompatActivity implements FragmentYourInte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_your_intrests);
+
+        getSupportActionBar().setTitle("YOUR INTERESTS");
 
         if (findViewById(R.id.fragment_container) != null) {
 

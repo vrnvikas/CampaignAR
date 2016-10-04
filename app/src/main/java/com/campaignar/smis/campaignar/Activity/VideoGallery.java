@@ -8,11 +8,14 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.campaignar.smis.campaignar.Fragments.FragmentGallary;
 import com.campaignar.smis.campaignar.Fragments.VideoFragment;
 import com.campaignar.smis.campaignar.R;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 
-public class VideoGallery extends AppCompatActivity implements VideoFragment.OnFragmentInteractionListener {
+public class VideoGallery extends BaseActivity
+        implements VideoFragment.OnFragmentInteractionListener,
+                    FragmentGallary.OnFragmentInteractionListener{
 
     FragmentPagerItemAdapter adapter;
     ViewPager viewPager;
@@ -33,7 +36,6 @@ public class VideoGallery extends AppCompatActivity implements VideoFragment.OnF
         viewPagerTab = (SmartTabLayout) findViewById(R.id.viewpagertab);
         viewPagerTab.setDistributeEvenly(true);
         viewPagerTab.setViewPager(viewPager);
-
 
     }
 
@@ -58,7 +60,16 @@ public class VideoGallery extends AppCompatActivity implements VideoFragment.OnF
 
         @Override
         public Fragment getItem(int position) {
-            VideoFragment fragment = VideoFragment.newInstance("","");
+
+            Fragment fragment;
+
+            if(position == 0){
+                fragment = VideoFragment.newInstance("","");
+            }else {
+
+                fragment = FragmentGallary.newInstance("","");
+            }
+
             return fragment;
         }
 

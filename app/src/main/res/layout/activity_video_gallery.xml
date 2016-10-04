@@ -7,8 +7,6 @@
     android:layout_height="match_parent"
     tools:context="com.campaignar.smis.campaignar.Activity.VideoGallery">
 
-
-
     <com.ogaclejapan.smarttablayout.SmartTabLayout
         android:id="@+id/viewpagertab"
         android:layout_width="match_parent"

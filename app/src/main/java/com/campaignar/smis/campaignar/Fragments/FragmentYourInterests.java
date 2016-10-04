@@ -1,6 +1,7 @@
 package com.campaignar.smis.campaignar.Fragments;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -31,6 +32,7 @@ public class FragmentYourInterests extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private TypedArray imagesList;
 
     private OnFragmentInteractionListener mListener;
 
@@ -76,7 +78,10 @@ public class FragmentYourInterests extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.your_interests_recycler_view);
-        YourInterestsRecyclerViewAdapter adapter = new YourInterestsRecyclerViewAdapter(getActivity());
+
+        imagesList = getActivity().getResources().obtainTypedArray(R.array.images_interests);
+
+        YourInterestsRecyclerViewAdapter adapter = new YourInterestsRecyclerViewAdapter(getActivity(),imagesList);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
     }

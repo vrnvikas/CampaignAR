@@ -32,7 +32,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PollingBoothActivity extends FragmentActivity implements OnMapReadyCallback, DirectionFinderListener {
+public class PollingBoothActivity extends BaseActivity implements OnMapReadyCallback, DirectionFinderListener {
 
     private GoogleMap mMap;
     private Button btnFindPath;
@@ -49,19 +49,19 @@ public class PollingBoothActivity extends FragmentActivity implements OnMapReady
         setContentView(R.layout.activity_polling_booth);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+                .findFragmentById(R.id.map_fragment);
         mapFragment.getMapAsync(this);
 
-        btnFindPath = (Button) findViewById(R.id.btnFindPath);
-        etOrigin = (EditText) findViewById(R.id.etOrigin);
-        etDestination = (EditText) findViewById(R.id.etDestination);
+        //btnFindPath = (Button) findViewById(R.id.btnFindPath);
+        //etOrigin = (EditText) findViewById(R.id.etOrigin);
+        //etDestination = (EditText) findViewById(R.id.etDestination);
 
-        btnFindPath.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendRequest();
-            }
-        });
+//        btnFindPath.setOnClickListener(new View.OnClickListener() {
+  //          @Override
+    //        public void onClick(View v) {
+      //          sendRequest();
+      //      }
+     //   });
 
     }
 
@@ -72,6 +72,7 @@ public class PollingBoothActivity extends FragmentActivity implements OnMapReady
             Toast.makeText(this, "Please enter origin address!", Toast.LENGTH_SHORT).show();
             return;
         }
+
         if (destination.isEmpty()) {
             Toast.makeText(this, "Please enter destination address!", Toast.LENGTH_SHORT).show();
             return;
@@ -140,8 +141,8 @@ public class PollingBoothActivity extends FragmentActivity implements OnMapReady
 
         for (Route route : routes) {
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(route.startLocation, 16));
-            ((TextView) findViewById(R.id.tvDuration)).setText(route.duration.text);
-            ((TextView) findViewById(R.id.tvDistance)).setText(route.distance.text);
+            //((TextView) findViewById(R.id.tvDuration)).setText(route.duration.text);
+           // ((TextView) findViewById(R.id.tvDistance)).setText(route.distance.text);
 
             originMarkers.add(mMap.addMarker(new MarkerOptions()
                     .icon(BitmapDescriptorFactory.fromResource(R.drawable.start_blue))

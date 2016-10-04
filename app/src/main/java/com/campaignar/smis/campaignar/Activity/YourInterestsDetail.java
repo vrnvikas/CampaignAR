@@ -1,6 +1,7 @@
 package com.campaignar.smis.campaignar.Activity;
 
 import android.net.Uri;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -12,13 +13,17 @@ import android.transition.Transition;
 import android.transition.TransitionInflater;
 import android.view.Gravity;
 
+import com.campaignar.smis.campaignar.Fragments.BlankFragment;
 import com.campaignar.smis.campaignar.Fragments.FragmentYourInterests;
 import com.campaignar.smis.campaignar.Fragments.FragmentYourInterestsDetail;
 import com.campaignar.smis.campaignar.R;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 
-public class YourInterestsDetail extends AppCompatActivity
-        implements FragmentYourInterestsDetail.OnFragmentInteractionListener {
+import java.util.ArrayList;
+import java.util.List;
+
+public class YourInterestsDetail extends BaseActivity
+        implements BlankFragment.OnFragmentInteractionListener,FragmentYourInterestsDetail.OnFragmentInteractionListener {
 
     FragmentPagerItemAdapter adapter;
     ViewPager viewPager;
@@ -28,15 +33,8 @@ public class YourInterestsDetail extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_your_interests_detail);
-
-        adapter = new FragmentPagerItemAdapter(getSupportFragmentManager());
-
-        viewPager = (ViewPager) findViewById(R.id.viewpager);
-        viewPager.setAdapter(adapter);
-
-        viewPagerTab = (SmartTabLayout) findViewById(R.id.viewpagertab);
-        //viewPagerTab.setDistributeEvenly(true);
-        viewPagerTab.setViewPager(viewPager);
+        getSupportActionBar().setTitle("YOUR INTERESTS");
+        setupViewPager();
 
     }
 
@@ -45,10 +43,58 @@ public class YourInterestsDetail extends AppCompatActivity
 
     }
 
+    private void setupViewPager() {
+        final ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+        setupViewPager(viewPager);
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(viewPager);
+    }
+
+    private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFrag(BlankFragment.newInstance("",""), "INITIATIVES");
+        adapter.addFrag(BlankFragment.newInstance("",""), "NEWS");
+        adapter.addFrag(BlankFragment.newInstance("",""), "GALLARY");
+
+        viewPager.setAdapter(adapter);
+    }
+
+
+    static class ViewPagerAdapter extends FragmentPagerAdapter {
+
+        private final List<Fragment> mFragmentList = new ArrayList<>();
+        private final List<String> mFragmentTitleList = new ArrayList<>();
+
+        public ViewPagerAdapter(FragmentManager manager) {
+            super(manager);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return mFragmentList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return mFragmentList.size();
+        }
+
+        public void addFrag(Fragment fragment, String title) {
+            mFragmentList.add(fragment);
+            mFragmentTitleList.add(title);
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return mFragmentTitleList.get(position);
+        }
+    }
+
 
     private class FragmentPagerItemAdapter extends FragmentPagerAdapter {
 
-        private String[] tabsTitles = {"INTRO","INITIATIVES","NEWS","GALLERY"};
+        private String[] tabsTitles = {"INITIATIVES","INTRO","NEWS","GALLERY"};
 
         public FragmentPagerItemAdapter(FragmentManager fm) {
             super(fm);
@@ -62,7 +108,7 @@ public class YourInterestsDetail extends AppCompatActivity
 
         @Override
         public Fragment getItem(int position) {
-            FragmentYourInterestsDetail fragment = FragmentYourInterestsDetail.newInstance("","");
+            BlankFragment fragment = BlankFragment.newInstance("","");
             return fragment;
         }
 

@@ -1,33 +1,37 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.campaignar.smis.campaignar.Fragments.FragmentYourInterestsDetail">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="The Bharatiya Janata Party expresses its
-    deep concern over the ongoing agrarian
-    crisis in the country. Agriculture in India is
-    not merely an economic activity but also
-    a source of employment generation for
-    nearly two third of our population." />
+        android:layout_height="match_parent"
+        android:layout_margin="25dp"
+        android:orientation="vertical">
+
+        <ayar.oktay.advancedtextview.AdvancedTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dummy_text_one"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:lineSpacingExtra="1.5dp"
+            app:fontFile="@string/Gotham_Light" />
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="The UPA Government’s inability to respond
-            quickly and adequately against the
-            challenges posed by the ongoing crisis
-             has put livelihoods of our farmers in jeopardy.
-            India needs an economic model
-            based on equitable growth which doesn’t
-             create huge income disparities." />
+        <ayar.oktay.advancedtextview.AdvancedTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/dummy_text_two"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:lineSpacingExtra="1.5dp"
+            app:fontFile="@string/Gotham_Light" />
+
+    </LinearLayout>
 
 
-</LinearLayout>
+</android.support.v4.widget.NestedScrollView>

@@ -1,12 +1,12 @@
 package com.campaignar.smis.campaignar.Activity;
 
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,10 +16,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 import com.campaignar.smis.campaignar.Adapter.HomeScreenRecyclerViewAdapter;
 import com.campaignar.smis.campaignar.R;
-import com.daimajia.androidviewhover.BlurLayout;
 
 public class HomeScreen extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,View.OnClickListener {
@@ -28,7 +28,10 @@ public class HomeScreen extends AppCompatActivity
     private RecyclerView recyclerView;
     private HomeScreenRecyclerViewAdapter recyclerViewAdapter;
     private String[] dataArray;
+    private TypedArray myImages;
     private View badgesView;
+    private ImageView ivShare;
+    private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +40,13 @@ public class HomeScreen extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         recyclerView = (RecyclerView) findViewById(R.id.home_screen_recycler_view);
         badgesView = findViewById(R.id.badge_view);
+        ivShare = (ImageView) findViewById(R.id.ivShare);
         setSupportActionBar(toolbar);
         toolbar.setTitle("");
         setTitle("");
-
         dataArray = getResources().getStringArray(R.array.home_screen_list);
-        recyclerViewAdapter = new HomeScreenRecyclerViewAdapter(this,dataArray);
+        myImages = getResources().obtainTypedArray(R.array.icon_images_home_screen_list);
+        recyclerViewAdapter = new HomeScreenRecyclerViewAdapter(this,dataArray,myImages);
         recyclerView.setAdapter(recyclerViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -64,11 +68,26 @@ public class HomeScreen extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
 
+        ivShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Share();
+            }
+        });
 
+
+    }
+
+    private void Share() {
+        Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+        sharingIntent.setType("text/plain");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Text");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject");
+        startActivity(Intent.createChooser(sharingIntent, "Share via"));
     }
 
     @Override
@@ -109,6 +128,7 @@ public class HomeScreen extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        startActivityFromDrawer(id);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -119,6 +139,34 @@ public class HomeScreen extends AppCompatActivity
     public void onClick(View v) {
         if(v.getId() == badgesView.getId()){
             startActivity(new Intent(this,BadgesActivity.class));
+        }
+    }
+
+
+    private void startActivityFromDrawer(int position) {
+        switch (position){
+            case 0:
+                startActivity(new Intent(this, LiveDiscussions.class));
+                break;
+            case 1:
+                break;
+            case 2:
+                startActivity(new Intent(this, YourInterests.class));
+                break;
+            case 3:
+                startActivity(new Intent(this, KnowYourCandidate.class));
+                break;
+            case 4:
+                startActivity(new Intent(this, PollingBoothActivity.class));
+                break;
+            case 5:
+                break;
+            case 6:
+                startActivity(new Intent(this, VideoGallery.class));
+                break;
+            default:
+                startActivity(new Intent(this, YourInterests.class));
+                break;
         }
     }
 }

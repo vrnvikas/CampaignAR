@@ -4,44 +4,44 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_home"
             android:title="HOME" />
         <item
             android:id="@+id/nav_discussions"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_discussions"
             android:title="LIVE DISCUSSIONS IN 360" />
         <item
             android:id="@+id/nav_be_the_cm"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_cardboard"
             android:title="BE THE CM" />
         <item
             android:id="@+id/nav_ar_history"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_ar"
             android:title="AR HISTORY" />
 
         <item
             android:id="@+id/nav_interest"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_nterest"
             android:title="YOUR INTERESTS" />
 
         <item
             android:id="@+id/nav_candidate"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_kyc"
             android:title="KNOW YOUR CANDIDATE" />
 
         <item
             android:id="@+id/nav_polling_booth"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_pooling"
             android:title="POLLING BOOTH" />
 
         <item
             android:id="@+id/nav_party"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_about"
             android:title="OUR PARTY" />
 
         <item
             android:id="@+id/nav_video_gallery"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_gallery"
             android:title="VIDEO AND GALLERY" />
     </group>
 

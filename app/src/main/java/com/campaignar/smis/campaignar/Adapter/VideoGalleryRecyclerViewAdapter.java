@@ -2,10 +2,12 @@ package com.campaignar.smis.campaignar.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.campaignar.smis.campaignar.Activity.YouTubePlayerActivity;
 import com.campaignar.smis.campaignar.R;
@@ -18,9 +20,11 @@ public class VideoGalleryRecyclerViewAdapter extends
         RecyclerView.Adapter<VideoGalleryRecyclerViewAdapter.VideoGalleryViewHolder> {
 
     private Context mContext;
+    private TypedArray typedArray;
 
     public VideoGalleryRecyclerViewAdapter(Context context) {
         mContext = context;
+        typedArray = context.getResources().obtainTypedArray(R.array.images_video_gallary);
     }
 
     @Override
@@ -39,7 +43,7 @@ public class VideoGalleryRecyclerViewAdapter extends
     @Override
     public void onBindViewHolder(VideoGalleryViewHolder holder, int position) {
 
-
+        holder.ivVideoImage.setImageResource(typedArray.getResourceId(position,-1));
     }
 
     @Override
@@ -53,9 +57,12 @@ public class VideoGalleryRecyclerViewAdapter extends
 
     public class VideoGalleryViewHolder extends RecyclerView.ViewHolder {
 
+        ImageView ivVideoImage;
 
         public VideoGalleryViewHolder(View itemView) {
             super(itemView);
+
+            ivVideoImage = (ImageView) itemView.findViewById(R.id.ivImageVideo);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

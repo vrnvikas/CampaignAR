@@ -2,10 +2,12 @@ package com.campaignar.smis.campaignar.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.campaignar.smis.campaignar.Activity.KnowYourCandidateDetail;
@@ -22,10 +24,17 @@ public class KnowYourCandidateRecyclerViewAdapter extends
 
     private final FragmentKnowYourCandidate.OnFragmentInteractionListener listener;
     private Context mContext;
+    private  TypedArray imagesList;
+    private String[] listNames,listState,listPosition;
 
-    public KnowYourCandidateRecyclerViewAdapter(Context context, FragmentKnowYourCandidate.OnFragmentInteractionListener mListener) {
+    public KnowYourCandidateRecyclerViewAdapter(Context context,
+      FragmentKnowYourCandidate.OnFragmentInteractionListener mListener, TypedArray imagesList) {
         mContext = context;
         listener = mListener;
+        this.imagesList = imagesList;
+        listNames = mContext.getResources().getStringArray(R.array.candidate_names);
+        listState = mContext.getResources().getStringArray(R.array.candidate_state);
+        listPosition = mContext.getResources().getStringArray(R.array.candidate_rank);
     }
 
     @Override
@@ -44,7 +53,13 @@ public class KnowYourCandidateRecyclerViewAdapter extends
     @Override
     public void onBindViewHolder(KnowYourCandidateViewHolder holder, int position) {
 
-
+        holder.candidateImageView.setImageResource(imagesList.getResourceId(position,-1));
+        holder.tvPosition.setText(listPosition[position]);
+        holder.tvState.setText(listState[position]);
+        holder.tvPosition.setText(listPosition[position]);
+        if(position == 1){
+            holder.parentLayout.setBackgroundColor(getContext().getResources().getColor(R.color.white));
+        }
     }
 
     @Override
@@ -60,10 +75,12 @@ public class KnowYourCandidateRecyclerViewAdapter extends
 
         TextView tvState,tvPrevious,tvName,tvPosition;
         CircularImageView candidateImageView;
+        LinearLayout parentLayout;
 
         public KnowYourCandidateViewHolder(View itemView) {
             super(itemView);
 
+            parentLayout = (LinearLayout) itemView;
             tvState = (TextView) itemView.findViewById(R.id.tvState);
             tvName = (TextView) itemView.findViewById(R.id.tvName);
             tvPosition = (TextView) itemView.findViewById(R.id.tvPosition);
