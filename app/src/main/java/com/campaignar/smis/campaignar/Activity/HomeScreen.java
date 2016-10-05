@@ -128,6 +128,9 @@ public class HomeScreen extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+
+
+
         startActivityFromDrawer(id);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
