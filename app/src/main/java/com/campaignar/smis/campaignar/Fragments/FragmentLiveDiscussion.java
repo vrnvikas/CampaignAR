@@ -52,7 +52,7 @@ public class FragmentLiveDiscussion extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         imagesList = getResources().obtainTypedArray(R.array.images_live_discussion);
-        adapter = new LiveDiscussionRecyclerViewAdapter(getActivity(),imagesList,mListener);
+        adapter = new LiveDiscussionRecyclerViewAdapter(getActivity(), imagesList, mListener);
         recyclerView.setAdapter(adapter);
     }
 

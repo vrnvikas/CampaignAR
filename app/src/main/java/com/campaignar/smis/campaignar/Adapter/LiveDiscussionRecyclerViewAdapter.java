@@ -34,6 +34,16 @@ public class LiveDiscussionRecyclerViewAdapter extends
         this.mListener = mListener;
     }
 
+
+    @Override
+    public int getItemViewType(int position) {
+        if (position == 0) {
+            return ITEM_TYPE_HEADER;
+        } else {
+            return ITEM_TYPE_NORMAL;
+        }
+    }
+
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
@@ -61,16 +71,6 @@ public class LiveDiscussionRecyclerViewAdapter extends
 
     }
 
-
-    @Override
-    public int getItemViewType(int position) {
-
-        if (position == 1) {
-            return ITEM_TYPE_HEADER;
-        } else {
-            return ITEM_TYPE_NORMAL;
-        }
-    }
 
     @Override
     public int getItemCount() {
@@ -105,7 +105,6 @@ public class LiveDiscussionRecyclerViewAdapter extends
             ivShare = (ImageView) itemView.findViewById(R.id.ivShare);
 
             ivShare.setOnClickListener(this);
-
             tvPostQuestion.setOnClickListener(this);
 
 
@@ -118,7 +117,6 @@ public class LiveDiscussionRecyclerViewAdapter extends
         @Override
         public void onClick(View v) {
             if (v.getId() == R.id.ivShare) {
-
                 Share();
             }
             if (v.getId() == R.id.tvPostQuestion) {
