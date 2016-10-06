@@ -17,9 +17,6 @@ public class LiveDiscussions extends BaseActivity
         FragmentPostQuestion.OnFragmentInteractionListener{
 
     private Fragment currentFragment;
-    private RecyclerView recyclerView;
-    private TypedArray imagesList;
-    private LiveDiscussionRecyclerViewAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +27,7 @@ public class LiveDiscussions extends BaseActivity
 
         if (findViewById(R.id.fragment_container) != null) {
 
-            currentFragment = FragmentLiveDiscussion.newInstance("","");
+            currentFragment = FragmentLiveDiscussion.newInstance();
 
             currentFragment.setArguments(getIntent().getExtras());
 
@@ -53,7 +50,7 @@ public class LiveDiscussions extends BaseActivity
 
     @Override
     public void onLoadFragmentLiveDiscussion() {
-        Fragment newFragment = FragmentLiveDiscussion.newInstance("","");
+        Fragment newFragment = FragmentLiveDiscussion.newInstance();
         getSupportFragmentManager().beginTransaction()
                 .add(newFragment, "RING_SPECS")
                 .addToBackStack(null)

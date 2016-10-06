@@ -3,21 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/parent"
     android:layout_width="match_parent"
-    android:layout_height="250dp">
+    android:layout_height="20dp">
 
     <ImageView
         android:id="@+id/ivLiveDiscussion"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="fitXY"
-        android:src="@drawable/live_discussions_new"/>
+        android:layout_height="wrap_content"
+        android:src="@drawable/live_discussions_new" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/overlay"
         android:orientation="vertical"
-        android:layout_alignParentBottom="true"
         android:weightSum="6">
 
 
@@ -44,8 +42,8 @@
             android:paddingBottom="7dp"
             android:text="DEBATE WITH BJP LEADERS"
             android:textColor="@color/White"
-            app:fontFile="@string/Gotham_Bold"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            app:fontFile="@string/Gotham_Bold" />
 
 
         <RelativeLayout
@@ -62,9 +60,9 @@
                 android:layout_weight="1"
                 android:gravity="end"
                 android:text="Live"
-                app:fontFile="@string/Gotham_Book"
                 android:textColor="@color/colorAccent"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                app:fontFile="@string/Gotham_Book" />
 
             <ImageView
                 android:id="@+id/ivDividerLeft"
@@ -84,9 +82,9 @@
                 android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:text="10K Online"
-                app:fontFile="@string/Gotham_Book"
                 android:textColor="@color/grey"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                app:fontFile="@string/Gotham_Book" />
 
 
             <ImageView
@@ -107,9 +105,9 @@
                 android:layout_toRightOf="@+id/ivDividerRight"
                 android:layout_weight="1"
                 android:text="SHARE"
-                app:fontFile="@string/Gotham_Bold"
                 android:textColor="@color/white"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                app:fontFile="@string/Gotham_Bold" />
 
             <ImageView
                 android:id="@+id/ivShare"
@@ -141,15 +139,15 @@
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:text="POST A QUESTION"
-                    app:fontFile="@string/Gotham_Bold"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    app:fontFile="@string/Gotham_Bold" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:paddingBottom="3dp"
                     android:layout_toRightOf="@+id/tvPostQuestion"
+                    android:paddingBottom="3dp"
                     android:src="@drawable/white_54" />
 
             </RelativeLayout>

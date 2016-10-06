@@ -65,7 +65,7 @@ public class LiveDiscussionRecyclerViewAdapter extends
     @Override
     public int getItemViewType(int position) {
 
-        if (position == 0) {
+        if (position == 1) {
             return ITEM_TYPE_HEADER;
         } else {
             return ITEM_TYPE_NORMAL;
@@ -130,7 +130,7 @@ public class LiveDiscussionRecyclerViewAdapter extends
 
             Intent sharingIntent = new Intent(Intent.ACTION_SEND);
             sharingIntent.setType("text/plain");
-            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Text");
+            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Bhar");
             sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject");
             mContext.startActivity(Intent.createChooser(sharingIntent, "Share via"));
 
