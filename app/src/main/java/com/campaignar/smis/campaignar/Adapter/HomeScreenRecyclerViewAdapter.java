@@ -93,6 +93,8 @@ public class HomeScreenRecyclerViewAdapter extends
                     getContext().startActivity(new Intent(getContext(), LiveDiscussions.class));
                     break;
                 case 1:
+                    Intent intent = new Intent(getContext(),com.google.unity.GoogleUnityActivity.class);
+                    getContext().startActivity(intent);
                     break;
                 case 2:
                     getContext().startActivity(new Intent(getContext(), YourInterests.class));

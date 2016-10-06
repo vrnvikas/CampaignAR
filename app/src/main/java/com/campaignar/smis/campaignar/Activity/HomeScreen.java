@@ -152,6 +152,8 @@ public class HomeScreen extends AppCompatActivity
                 startActivity(new Intent(this, LiveDiscussions.class));
                 break;
             case 1:
+                Intent intent = new Intent(this,com.google.unity.GoogleUnityActivity.class);
+                startActivity(intent);
                 break;
             case 2:
                 startActivity(new Intent(this, YourInterests.class));
