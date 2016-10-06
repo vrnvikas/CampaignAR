@@ -163,6 +163,8 @@ public class HomeScreen extends AppCompatActivity
                 startActivity(new Intent(this, LiveDiscussions.class));
                 break;
             case R.id.nav_be_the_cm:
+                Intent intent = new Intent(this,com.google.unity.GoogleUnityActivity.class);
+                startActivity(intent);
                 break;
             case R.id.nav_ar_history:
                 break;
