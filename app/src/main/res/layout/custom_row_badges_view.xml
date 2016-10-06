@@ -3,14 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:paddingTop="15dp"
     android:orientation="vertical">
 
     <ImageView
-        android:layout_width="64dp"
-        android:layout_height="64dp"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="15dp"
         android:layout_marginBottom="5dp"
+        android:layout_marginTop="15dp"
         android:src="@drawable/badgesample" />
 
     <ayar.oktay.advancedtextview.AdvancedTextView
@@ -19,20 +20,19 @@
         android:layout_height="wrap_content"
         android:layout_margin="2dp"
         android:gravity="center_horizontal"
-        android:text="Socialy
-Responsible"
-        app:fontFile="@string/Gotham_Medium"
-        android:textSize="16sp" />
+        android:text="Socialy Responsible"
+        android:textSize="12sp"
+        android:textColor="@color/black"
+        app:fontFile="@string/Gotham_Medium" />
 
     <ayar.oktay.advancedtextview.AdvancedTextView
         android:id="@+id/tvBadgeInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
+        android:text="Complete 5 more AR task"
         android:textColor="#808080"
-        app:fontFile="@string/Gotham_Italic"
-        android:text="Complete 5 more AR
-task"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        app:fontFile="@string/Gotham_Italic" />
 
 </LinearLayout>

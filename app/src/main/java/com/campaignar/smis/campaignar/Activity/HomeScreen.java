@@ -7,6 +7,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -17,9 +18,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.campaignar.smis.campaignar.Adapter.HomeScreenRecyclerViewAdapter;
 import com.campaignar.smis.campaignar.R;
+
+import ayar.oktay.advancedtextview.AdvancedTextView;
 
 public class HomeScreen extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,View.OnClickListener {
@@ -31,6 +35,7 @@ public class HomeScreen extends AppCompatActivity
     private TypedArray myImages;
     private View badgesView;
     private ImageView ivShare;
+    private AdvancedTextView tvShare;
     private NavigationView navigationView;
 
     @Override
@@ -40,6 +45,7 @@ public class HomeScreen extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         recyclerView = (RecyclerView) findViewById(R.id.home_screen_recycler_view);
         badgesView = findViewById(R.id.badge_view);
+        tvShare = (AdvancedTextView) findViewById(R.id.tvShare);
         ivShare = (ImageView) findViewById(R.id.ivShare);
         setSupportActionBar(toolbar);
         toolbar.setTitle("");
@@ -71,7 +77,12 @@ public class HomeScreen extends AppCompatActivity
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
+        tvShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Share();
+            }
+        });
         ivShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -128,9 +139,6 @@ public class HomeScreen extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-
-
-
         startActivityFromDrawer(id);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -146,29 +154,35 @@ public class HomeScreen extends AppCompatActivity
     }
 
 
-    private void startActivityFromDrawer(int position) {
-        switch (position){
-            case 0:
+    private void startActivityFromDrawer(int id) {
+        Log.d("id", Integer.toString(id));
+        switch (id){
+            case R.id.nav_home:
+                break;
+            case R.id.nav_discussions:
                 startActivity(new Intent(this, LiveDiscussions.class));
                 break;
-            case 1:
+            case R.id.nav_be_the_cm:
                 break;
-            case 2:
+            case R.id.nav_ar_history:
+                break;
+            case R.id.nav_interest:
                 startActivity(new Intent(this, YourInterests.class));
                 break;
-            case 3:
+            case R.id.nav_candidate:
                 startActivity(new Intent(this, KnowYourCandidate.class));
                 break;
-            case 4:
+            case R.id.nav_polling_booth:
                 startActivity(new Intent(this, PollingBoothActivity.class));
                 break;
-            case 5:
+            case R.id.nav_party:
+                startActivity(new Intent(this, VideoGallery.class));
                 break;
-            case 6:
+            case R.id.nav_video_gallery:
                 startActivity(new Intent(this, VideoGallery.class));
                 break;
             default:
-                startActivity(new Intent(this, YourInterests.class));
+                startActivity(new Intent(this, HomeScreen.class));
                 break;
         }
     }

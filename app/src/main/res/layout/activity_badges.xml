@@ -17,29 +17,31 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight=".8"
-            android:background="@color/gray_background"
+            android:background="@color/bg_gray_badge"
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="64dp"
-                android:layout_height="64dp"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
                 android:layout_gravity="center_horizontal"
                 android:paddingTop="10dp"
                 android:src="@drawable/badgeload" />
 
             <ayar.oktay.advancedtextview.AdvancedTextView
                 android:id="@+id/tvCollectedbadges"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="2 / 6"
+                android:layout_gravity="center_horizontal"
+                android:text="2/6"
                 app:fontFile="@string/Gotham_Bold"
-                android:textSize="20sp" />
+                android:textColor="#333333"
+                android:textSize="16sp" />
 
             <ayar.oktay.advancedtextview.AdvancedTextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
                 app:fontFile="@string/Gotham_Book"
                 android:text="EARN MORE BADGES BYCOMPLETING EACH TASK"
                 android:textSize="12sp" />
@@ -57,8 +59,7 @@
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/badges_recycler_view"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                 />
+                android:layout_height="match_parent" />
 
         </LinearLayout>
         

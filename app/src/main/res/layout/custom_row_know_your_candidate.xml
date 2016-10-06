@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="20dp"
+    android:paddingTop="28dp"
+    android:paddingBottom="28dp"
     android:background="@color/grey"
     android:weightSum="2">
 
@@ -17,8 +18,8 @@
 
         <com.mikhaellopez.circularimageview.CircularImageView
             android:id="@+id/cvProfile"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
             app:civ_border="false"
             android:src="@drawable/politician_one" />
 
@@ -37,7 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorAccent"
-            android:textSize="17sp"
+            android:textSize="14sp"
             app:fontFile="@string/Gotham_Bold"
             android:text="ASSAM"/>
 
@@ -50,8 +51,7 @@
             app:fontFile="@string/Gotham_Book"
             android:textColor="@color/gray_40"
             android:textSize="22sp"
-            android:text="Sarbananda
-Sonowal"/>
+            android:text="Sarbananda Sonowal"/>
 
         <ayar.oktay.advancedtextview.AdvancedTextView
             android:id="@+id/tvPrevios"
@@ -59,7 +59,7 @@ Sonowal"/>
             android:layout_height="wrap_content"
             android:layout_marginBottom="3dp"
             app:fontFile="@string/Gotham_Bold"
-            android:textSize="16sp"
+            android:textSize="11sp"
             android:textColor="@color/gray_40"
             android:text="PREVIOUS"/>
 
@@ -68,7 +68,7 @@ Sonowal"/>
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorAccent"
-            android:textSize="18sp"
+            android:textSize="14sp"
             app:fontFile="@string/Gotham_Book"
             android:text="MP"/>
 

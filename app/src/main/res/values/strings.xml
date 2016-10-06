@@ -96,9 +96,7 @@
     </array>
 
     <array name="candidate_names">
-        <item>Sarbananda
-            Sonowal
-        </item>
+        <item>Sarbananda Sonowal</item>
         <item>H. Raja</item>
         <item>Adityanath</item>
     </array>
@@ -110,7 +108,7 @@
     </array>
 
     <array name="candidate_rank">
-        <item>MLA</item>
+        <item>PRESIDENT AASU\nMLA</item>
         <item>MLA</item>
         <item>MP</item>
     </array>

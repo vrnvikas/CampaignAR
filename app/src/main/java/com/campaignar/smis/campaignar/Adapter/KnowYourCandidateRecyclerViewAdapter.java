@@ -54,7 +54,7 @@ public class KnowYourCandidateRecyclerViewAdapter extends
     public void onBindViewHolder(KnowYourCandidateViewHolder holder, int position) {
 
         holder.candidateImageView.setImageResource(imagesList.getResourceId(position,-1));
-        holder.tvPosition.setText(listPosition[position]);
+        holder.tvName.setText(listNames[position]);
         holder.tvState.setText(listState[position]);
         holder.tvPosition.setText(listPosition[position]);
         if(position == 1){
